@@ -28,7 +28,8 @@ function App() {
     });
   }
 
-  function deleteNote(id) {
+  async function deleteNote(id) {
+    await dkeeper.deletNote(id);
     setNotes(prevNotes => {
       return prevNotes.filter((noteItem, index) => {
         return index !== id;
